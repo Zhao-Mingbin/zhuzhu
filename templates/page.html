@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <title>Title</title>
+</head>
+
+<body class="bg-danger">
+<div align="left" >
+    <img  src="{% static "./img/123.png" %}" style="width: 10vw" alt="a"><b style="font-size: 8vh"><a style="color: white;font-family: 幼圆; text-decoration:none">俺们的米奇妙妙屋❤</a></b>
+</div>
+<div align="center">
+
+ <div  style="margin-bottom:10vh;background:whitesmoke;flex: 1 ;width: 90vw;height: auto">
+ {% for foo in item.all %}
+ <div style="font-size: 5vh;padding: 3vh;display: block">
+ {{ foo.title }}
+<p style="font-size: 3vh;font-family: 幼圆">俺们已经在一起{{ foo.duration }}天了哦<br></p>
+{% autoescape off %}
+    {{ foo.content }}
+    <p style="color: hotpink;font-size: 2vw">======^~^故事正在发生^~^======</p>
+{% endautoescape %}
+ </div>
+{% endfor %}
+
+
+ </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
